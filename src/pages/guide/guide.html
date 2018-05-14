@@ -1,0 +1,40 @@
+<ion-header no-border>
+  <ion-navbar color="wbrainsGreen">
+    <ion-buttons end>
+      <button ion-button (click)="openAuthentificationPage()" color="light">Passer</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="no-scroll">
+  <ion-slides pager="true">
+ 
+  <ion-slide>
+    <img src="assets/img/slide-01.png"/>
+    <h2> Medical Care est votre assistant par excellence! </h2>
+    <p> Une puissante passerelle entre vous et votre médecin traitant ! </p>
+  </ion-slide>
+ 
+  <ion-slide>
+    <img src="assets/img/slide-02.png"/>
+    <h2> Surveillez votre état de santé </h2>
+    <p> Grace à notre application, surveillez votre état et évolution n'a jaamis été aussi facile! </p>
+  </ion-slide>
+ 
+  <ion-slide>
+    <ion-row>
+      <ion-col>
+        <img src="assets/img/slide-03.png"/>
+        <h2> Recevez en temps réel les recommandations de votre médecin </h2>
+        <p> Signalez les cas urgents avant qu'il ne soit trop tard !</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button clear style="text-transform: none" color="wrainsBlue" (click)="openAuthentificationPage()"> Aller vers l'application </button>
+      </ion-col>
+    </ion-row>
+  </ion-slide>
+
+ </ion-slides>
+</ion-content>

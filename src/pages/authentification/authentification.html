@@ -1,0 +1,53 @@
+<ion-header>
+	<ion-navbar color="wbrainsGreen">
+   		<ion-title> Authentification </ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	
+	<ion-list no-lines padding>
+
+		<form [formGroup]="authenticateForm">
+
+			<ion-item text-wrap *ngIf="!check() && (authenticateForm.controls.username.dirty || authenticateForm.controls.password.dirty)">
+				<p text-wrap style="font-size: 10px; color: #f44336;"> Le nom d'utilisateur ou le mot de passe est incorrect ! </p>
+			</ion-item>
+
+			<ion-item>
+				<ion-label>
+					<ion-icon name="contact" padding-right> </ion-icon>
+				</ion-label>
+			    <ion-input type="text" placeholder="Nom d'utilisateur" formControlName="username" [class.invalid]="!authenticateForm.controls.username.valid && authenticateForm.controls.username.dirty">
+			    </ion-input>
+			</ion-item>
+
+			<ion-item text-wrap *ngIf="!authenticateForm.controls.username.valid && authenticateForm.controls.username.dirty">
+				<p text-wrap style="font-size: 10px; color: #f44336" *ngIf="authenticateForm.controls.username.errors.pattern"> Le nom d'utilisateur  ne doit pas contenir de caractères spéciaux sauf (-) ou (_). </p>
+				<p text-wrap style="font-size: 10px; color: #f44336" *ngIf="authenticateForm.controls.username.errors.minlength || authenticateForm.controls.username.errors.maxlength"> Le nom d'utilisateur doit être entre 3 et 15 caractères. </p>
+				
+			</ion-item>
+
+			<ion-item>
+			    <ion-label>
+			    	<ion-icon name="lock" padding-right> </ion-icon>
+			    </ion-label>
+			    <ion-input type="password" placeholder="Mot de passe" formControlName="password" [class.invalid]="!authenticateForm.controls.password.valid && authenticateForm.controls.password.dirty">
+			    </ion-input>
+			</ion-item>
+
+			<ion-item *ngIf="!authenticateForm.controls.password.valid && authenticateForm.controls.password.dirty">
+				<p style="font-size: 10px; color: #f44336"> Le mot de passe doit contenir au moins 8 caractères. </p>
+			</ion-item>
+
+		</form>
+
+	</ion-list>
+
+	<div padding>
+    	<button ion-button color="wbrainsGreen" block id="loginButton" [disabled]="!authenticateForm.valid || !check()" (click)="openAccueilPatientPage()">
+    		Connexion
+    	</button>
+    </div>
+    
+</ion-content>

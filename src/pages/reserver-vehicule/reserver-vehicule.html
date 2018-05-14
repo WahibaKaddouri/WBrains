@@ -1,0 +1,58 @@
+<ion-header>
+
+	<ion-navbar color="wbrainsGreen" hideBackButton="true">
+		<img class='avatar' src="assets/img/user.png" (click)="openUserProfile()">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"> </ion-icon>
+		</button>
+		<ion-title> Réserver un véhicule </ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	
+<ion-list>
+  <ion-item>
+    <ion-label>Assistant</ion-label>
+    <ion-select [(ngModel)]="assistant">
+      <ion-option value="nes">Oui</ion-option>
+      <ion-option value="n64">Non</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Type du véhicule</ion-label>
+    <ion-select [(ngModel)]="vehicule">
+      <ion-option value="nes">Ambulance médicalisée</ion-option>
+      <ion-option value="n64">Ambulance sanitaire</ion-option>
+      <ion-option value="n64">Véhicule sanitaire léger</ion-option>
+      <ion-option value="n64">Véhicule leger</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Nom</ion-label>
+    <ion-input type="text" value=""></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Prenom</ion-label>
+    <ion-input type="text" value=""></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Wilaya</ion-label>
+    <ion-select [(ngModel)]="Wilaya">
+      <ion-option value="nes">Alger</ion-option>
+      <ion-option value="n64">Oran</ion-option>
+      <ion-option value="n64">Constantine</ion-option>
+      <ion-option value="n64">Annaba</ion-option>
+      <ion-option value="n64">Tizi Ouzou</ion-option>
+      <ion-option value="n64">Ouergla</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Rue</ion-label>
+    <ion-input type="text" value=""></ion-input>
+  </ion-item>
+</ion-list>
+
+
+</ion-content>

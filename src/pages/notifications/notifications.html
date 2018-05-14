@@ -1,0 +1,24 @@
+<ion-header>
+
+	<ion-navbar color="wbrainsGreen" hideBackButton="true">
+		<img class="avatar" src="assets/img/user.png" (click)="openUserProfile()">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"> </ion-icon>
+		</button>
+		<ion-title> Notifications </ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content padding> 
+	
+	<ion-card>
+  <ion-card-header>
+    Notification
+  </ion-card-header>
+  <ion-card-content>
+    <button ion-button color="light" (click)="showAlert()">Afficher la notification!</button>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

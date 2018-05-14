@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar color="wbrainsGreen">
+    <img class="avatar" src="assets/img/user.png" (click)="openUserProfile()">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"> </ion-icon>
+    </button>
+    <ion-title> Indicateurs </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item (click)="openPriseGlycemiePage()">
+      Glycémie
+    </button>
+    <button ion-item>
+      Tension
+    </button>
+    <button ion-item>
+      Poids
+    </button>
+  </ion-list>
+</ion-content>

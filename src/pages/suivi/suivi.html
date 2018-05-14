@@ -1,0 +1,38 @@
+<ion-header>
+
+	<ion-navbar color="wbrainsGreen" hideBackButton="true">
+		<img class='avatar' src="assets/img/user.png" (click)="openUserProfile()">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"> </ion-icon>
+		</button>
+		<ion-title> Mon état </ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	
+	<ion-list padding-top no-lines>
+
+		<ion-item>
+			
+			Taux de glycémie moyen
+			<ion-note item-end> {{Glycemie}} </ion-note>
+		</ion-item>
+
+		<ion-item>
+			
+			Tension artérielle moyenne
+			<ion-note item-end> {{Tensionarterielle}} </ion-note>
+		</ion-item>
+
+		<ion-item>
+			
+			Nombre de cas necessitant une intervention urgente
+			<ion-note item-end> {{Casurgentsrecenses}} </ion-note>
+		</ion-item>
+
+	</ion-list>
+
+</ion-content>
+

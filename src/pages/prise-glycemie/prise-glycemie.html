@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="wbrainsGreen">
+    <ion-title>Prise de glycémie</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+<ion-list>
+	<ion-item>
+	    <ion-label>Automatique</ion-label>
+	    <ion-toggle color="wbrainsGreen" checked="false" [(ngModel)]="autoMode" (ionChange)="detectMaterialLoading()">
+	    </ion-toggle>
+	</ion-item>
+</ion-list>
+
+<form [formGroup]="glycemieForm">
+    <ion-list>
+	    <ion-item>	
+      <ion-label>Glycémie (g/L) : </ion-label>    
+			<ion-input type="number" min=0.18 max=7.2 step=0.001 formControlName="glycemie">
+			</ion-input>
+	    </ion-item>
+
+	    <ion-item *ngIf="!glycemieForm.controls.glycemie.valid  && (glycemieForm.controls.glycemie.dirty || (glycemieForm.controls.glycemie.touched))">
+
+            <p style="color: #ea6153;" *ngIf="glycemieForm.controls.glycemie.errors.required">Erreur : Aucun taux de glycémie saisi !</p>
+
+            <p style="color: #ea6153;" *ngIf="glycemieForm.controls.glycemie.errors.notANumber">Erreur : Taux de glycémie non valide !</p>
+            
+            <p style="color: #ea6153;" *ngIf="glycemieForm.controls.glycemie.errors.negativeValue">Erreur : Taux de glycémie négatif !</p>
+
+           	<p style="color: #ea6153;" *ngIf="glycemieForm.controls.glycemie.errors.nullValue && (!glycemieForm.controls.glycemie.errors.required)">Erreur : Taux de glycémie nul !</p>
+
+           	<p style="color: #ea6153;" *ngIf="glycemieForm.controls.glycemie.errors.tooSmallValue">Erreur : Taux de glycémie trop bas !</p>
+
+           	<p style="color: #ea6153;" *ngIf="glycemieForm.controls.glycemie.errors.tooBigValue">Erreur : Taux de glycémie trop élevé !</p>
+
+        </ion-item>
+	</ion-list>
+</form>
+
+  <div padding>
+      <button ion-button color="wbrainsGreen" block id="priseGlycemie" [disabled]="!glycemieForm.valid" (click)="controlSendPrelevement()">
+      Confirmer
+      </button>
+  </div>
+</ion-content>

@@ -1,0 +1,35 @@
+page-guide 
+{
+  .no-scroll .scroll-content
+  {
+     overflow: hidden;
+  }
+
+  .swiper-container
+  {
+    background: #2DAE90;
+  }
+  
+  .swiper-pagination-bullet-active 
+  {
+    background: #394C5D;
+  }
+
+  .slide-image 
+  {
+    max-height: 40%;
+    max-width: 60%;
+  }
+
+  h2
+  {
+    color: #ffffff;
+  }
+
+  p 
+  {
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+}

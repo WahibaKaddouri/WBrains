@@ -1,0 +1,25 @@
+<ion-menu [content]="MenuContent">
+
+  <ion-toolbar color="wbrainsGreen">
+    <ion-title> Menu </ion-title>
+  </ion-toolbar>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item menuClose no-lines *ngFor="let p of pages" (click)="openPage(p.index)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav #MenuContent [root]="suivi"></ion-nav>
+
+<ion-tabs selectedIndex="2" color="wbrainsGreen" tabsHighLight="true" #myTabs>
+  <ion-tab [root]="notification" tabIcon="chatboxes" tabBadge="3" tabBadgeStyle="danger"></ion-tab>
+  <ion-tab [root]="mesureIndicateurs" tabIcon="pulse"></ion-tab>
+  <ion-tab [root]="suivi" tabIcon="trending-up"></ion-tab>
+  <ion-tab [root]="rdv" tabIcon="calendar"></ion-tab>
+  <ion-tab [root]="resVehicule" tabIcon="car"></ion-tab>
+</ion-tabs>
